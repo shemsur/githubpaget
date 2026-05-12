@@ -582,6 +582,91 @@
       50% { opacity: 0; }
     }
 
+    /* ── EDUCATION ── */
+    .edu-card {
+      display: flex;
+      gap: 2rem;
+      border: 1px solid var(--border);
+      background: var(--bg2);
+      padding: 2rem;
+      align-items: flex-start;
+    }
+
+    .edu-icon { font-size: 2.5rem; line-height: 1; }
+
+    .edu-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+    }
+
+    /* ── CERT CARDS CON THUMBNAIL ── */
+    .cert-card {
+      cursor: default;
+    }
+
+    .cert-thumb-wrap {
+      width: 100%;
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      border-radius: 2px;
+      margin-bottom: 0.9rem;
+      background: var(--surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      position: relative;
+    }
+
+    .cert-thumb-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .cert-card:hover .cert-thumb-wrap img {
+      transform: scale(1.04);
+    }
+
+    .cert-thumb-placeholder {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--muted);
+      letter-spacing: 0.08em;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .cert-thumb-placeholder span {
+      display: block;
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      opacity: 0.3;
+    }
+
+    .cert-upload-btn {
+      position: absolute;
+      bottom: 0.5rem;
+      right: 0.5rem;
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      letter-spacing: 0.08em;
+      background: rgba(0,229,255,0.15);
+      border: 1px solid rgba(0,229,255,0.3);
+      color: var(--accent);
+      padding: 0.25rem 0.6rem;
+      cursor: pointer;
+      transition: background 0.2s;
+      border-radius: 2px;
+    }
+
+    .cert-upload-btn:hover { background: rgba(0,229,255,0.25); }
+
+    #file-input { display: none; }
+
     /* ── FADE IN ── */
     .fade-in {
       opacity: 0;
@@ -612,7 +697,7 @@
     <li><a href="#skills">Skills</a></li>
     <li><a href="#experience">Exp.</a></li>
     <li><a href="#certs">Certs</a></li>
-    <li><a href="#projects">Labs</a></li>
+    <li><a href="#education">Educación</a></li>
     <li><a href="#contact">Contacto</a></li>
   </ul>
 </nav>
@@ -635,23 +720,7 @@
   </div>
 </section>
 
-<!-- STATS -->
-<div class="stats-bar">
-  <div class="stat fade-in">
-  </div>
-  <div class="stat fade-in">
-    <span class="stat-num">106h</span>
-    <span class="stat-label">Diplomado Seg. Info.</span>
-  </div>
-  <div class="stat fade-in">
-    <span class="stat-num">HTB</span>
-    <span class="stat-label">HackTheBox activo</span>
-  </div>
-  <div class="stat fade-in">
-    <span class="stat-num">8+</span>
-    <span class="stat-label">Certificaciones</span>
-  </div>
-</div>
+
 
 <!-- SKILLS -->
 <section id="skills">
@@ -703,15 +772,16 @@
       <div class="skill-icon">🐧</div>
       <div class="skill-title">Sistemas Operativos</div>
       <div class="skill-tags">
-        <span class="tag">Windows Server</span>
-        <span class="tag">Windows 7/8/10/11</span>
+        <span class="tag">Kali Linux</span>
+        <span class="tag">Parrot OS</span>
+        <span class="tag">Ubuntu</span>
         <span class="tag">Debian</span>
         <span class="tag">Arch Linux</span>
         <span class="tag">CentOS</span>
-        <span class="tag">Parrot OS</span>
-        <span class="tag">Ubuntu</span>
         <span class="tag">Raspbian</span>
-        <span class="tag">Kali Linux</span>
+        <span class="tag">Windows 7/8/10/11</span>
+        <span class="tag">Windows Server</span>
+        <span class="tag">macOS</span>
       </div>
     </div>
     <div class="skill-card fade-in">
@@ -814,48 +884,103 @@
     <div class="section-line"></div>
   </div>
 
+  <input type="file" id="file-input" accept="image/*">
+
   <div class="certs-grid">
-    <div class="cert-card fade-in">
+    <div class="cert-card fade-in" data-cert="diplomado-uach">
+      <div class="cert-thumb-wrap">
+        <img id="img-diplomado-uach" src="" alt="" style="display:none">
+        <div class="cert-thumb-placeholder" id="ph-diplomado-uach"><span>📄</span>Subir imagen</div>
+        <button class="cert-upload-btn" onclick="triggerUpload('diplomado-uach')">+ Subir</button>
+      </div>
       <div class="cert-name">Diplomado en Seguridad Informática</div>
       <div class="cert-issuer">Universidad Autónoma de Chihuahua (UACH)</div>
       <div class="cert-year">2025 · 106 horas</div>
     </div>
-    <div class="cert-card fade-in">
+
+    <div class="cert-card fade-in" data-cert="ethical-hacker">
+      <div class="cert-thumb-wrap">
+        <img id="img-ethical-hacker" src="" alt="" style="display:none">
+        <div class="cert-thumb-placeholder" id="ph-ethical-hacker"><span>📄</span>Subir imagen</div>
+        <button class="cert-upload-btn" onclick="triggerUpload('ethical-hacker')">+ Subir</button>
+      </div>
       <div class="cert-name">Ethical Hacker</div>
       <div class="cert-issuer">Cisco Networking Academy</div>
       <div class="cert-year">Cisco</div>
     </div>
-    <div class="cert-card fade-in">
+
+    <div class="cert-card fade-in" data-cert="ccna-intro">
+      <div class="cert-thumb-wrap">
+        <img id="img-ccna-intro" src="" alt="" style="display:none">
+        <div class="cert-thumb-placeholder" id="ph-ccna-intro"><span>📄</span>Subir imagen</div>
+        <button class="cert-upload-btn" onclick="triggerUpload('ccna-intro')">+ Subir</button>
+      </div>
       <div class="cert-name">CCNA: Introduction to Networks</div>
       <div class="cert-issuer">Cisco Networking Academy</div>
       <div class="cert-year">Cisco</div>
     </div>
-    <div class="cert-card fade-in">
+
+    <div class="cert-card fade-in" data-cert="intro-cybersec">
+      <div class="cert-thumb-wrap">
+        <img id="img-intro-cybersec" src="" alt="" style="display:none">
+        <div class="cert-thumb-placeholder" id="ph-intro-cybersec"><span>📄</span>Subir imagen</div>
+        <button class="cert-upload-btn" onclick="triggerUpload('intro-cybersec')">+ Subir</button>
+      </div>
       <div class="cert-name">Introduction to Cybersecurity</div>
       <div class="cert-issuer">Cisco Networking Academy</div>
       <div class="cert-year">Cisco</div>
     </div>
-    <div class="cert-card fade-in">
+
+    <div class="cert-card fade-in" data-cert="hack4u">
+      <div class="cert-thumb-wrap">
+        <img id="img-hack4u" src="" alt="" style="display:none">
+        <div class="cert-thumb-placeholder" id="ph-hack4u"><span>📄</span>Subir imagen</div>
+        <button class="cert-upload-btn" onclick="triggerUpload('hack4u')">+ Subir</button>
+      </div>
       <div class="cert-name">Introducción al Hacking</div>
       <div class="cert-issuer">hack4u.io</div>
       <div class="cert-year">hack4u</div>
     </div>
-    <div class="cert-card fade-in">
+
+    <div class="cert-card fade-in" data-cert="codered">
+      <div class="cert-thumb-wrap">
+        <img id="img-codered" src="" alt="" style="display:none">
+        <div class="cert-thumb-placeholder" id="ph-codered"><span>📄</span>Subir imagen</div>
+        <button class="cert-upload-btn" onclick="triggerUpload('codered')">+ Subir</button>
+      </div>
       <div class="cert-name">Hacking</div>
       <div class="cert-issuer">CodeRed</div>
       <div class="cert-year">CodeRed</div>
     </div>
-    <div class="cert-card fade-in">
+
+    <div class="cert-card fade-in" data-cert="slim-seg">
+      <div class="cert-thumb-wrap">
+        <img id="img-slim-seg" src="" alt="" style="display:none">
+        <div class="cert-thumb-placeholder" id="ph-slim-seg"><span>📄</span>Subir imagen</div>
+        <button class="cert-upload-btn" onclick="triggerUpload('slim-seg')">+ Subir</button>
+      </div>
       <div class="cert-name">Técnico en Seguridad Informática</div>
       <div class="cert-issuer">Fundación Carlos Slim</div>
       <div class="cert-year">Carlos Slim</div>
     </div>
-    <div class="cert-card fade-in">
+
+    <div class="cert-card fade-in" data-cert="slim-delitos">
+      <div class="cert-thumb-wrap">
+        <img id="img-slim-delitos" src="" alt="" style="display:none">
+        <div class="cert-thumb-placeholder" id="ph-slim-delitos"><span>📄</span>Subir imagen</div>
+        <button class="cert-upload-btn" onclick="triggerUpload('slim-delitos')">+ Subir</button>
+      </div>
       <div class="cert-name">Prevención de Delitos Cibernéticos</div>
       <div class="cert-issuer">Fundación Carlos Slim</div>
       <div class="cert-year">Carlos Slim</div>
     </div>
-    <div class="cert-card fade-in">
+
+    <div class="cert-card fade-in" data-cert="cisco-red">
+      <div class="cert-thumb-wrap">
+        <img id="img-cisco-red" src="" alt="" style="display:none">
+        <div class="cert-thumb-placeholder" id="ph-cisco-red"><span>📄</span>Subir imagen</div>
+        <button class="cert-upload-btn" onclick="triggerUpload('cisco-red')">+ Subir</button>
+      </div>
       <div class="cert-name">Direccionamiento de Red y Solución de Problemas</div>
       <div class="cert-issuer">Cisco Networking Academy</div>
       <div class="cert-year">Cisco</div>
@@ -863,6 +988,29 @@
   </div>
 </section>
 
+<!-- EDUCATION -->
+<section id="education">
+  <div class="section-header fade-in">
+    <span class="section-num">04</span>
+    <h2>EDUCACIÓN</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="edu-card fade-in">
+    <div class="edu-left">
+      <div class="edu-icon">🎓</div>
+    </div>
+    <div class="edu-right">
+      <div class="exp-period">Marzo 2025 - Febrero 2026</div>
+      <div class="exp-role">Ingeniería en Sistemas Computacionales</div>
+      <div class="exp-org">Tecnológico de Estudios Superiores de Ecatepec (TESE)</div>
+      <div class="edu-meta">
+        <span class="tag">Cédula Profesional: 14631951</span>
+        <span class="tag">Título profesional</span>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- CONTACT -->
 <section id="contact">
@@ -874,8 +1022,8 @@
   <a href="mailto:chrisandresol@outlook.com" class="btn btn-primary fade-in">chrisandresol@outlook.com</a>
   <div class="contact-links fade-in">
     <a href="https://github.com/shemsur" target="_blank" class="contact-link">⬡ GitHub / shemsur</a>
-    <a href="https://www.hackthebox.com/profile/1069253" target="_blank" class="contact-link">⬡ HackTheBox</a>
-    <a href="#" class="contact-link">⬡ LinkedIn [agregar]</a>
+    <a href="https://profile.hackthebox.com/profile/019e04ca-8260-730a-ae4a-0e5964d8a451" target="_blank" class="contact-link">⬡ HackTheBox</a>
+    <a href="http://www.linkedin.com/in/christian-andre-solis-perez" target="_blank" class="contact-link">⬡ LinkedIn</a>
   </div>
 </section>
 
@@ -892,6 +1040,46 @@
     { threshold: 0.1 }
   );
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+  // Cert image upload
+  let currentCert = null;
+  const fileInput = document.getElementById('file-input');
+
+  function triggerUpload(certId) {
+    currentCert = certId;
+    fileInput.click();
+  }
+
+  fileInput.addEventListener('change', (e) => {
+    const file = e.target.files[0];
+    if (!file || !currentCert) return;
+
+    const reader = new FileReader();
+    reader.onload = (ev) => {
+      const img = document.getElementById('img-' + currentCert);
+      const ph  = document.getElementById('ph-' + currentCert);
+      img.src = ev.target.result;
+      img.style.display = 'block';
+      ph.style.display  = 'none';
+      // Guardar en localStorage para persistencia
+      try { localStorage.setItem('cert-' + currentCert, ev.target.result); } catch(e) {}
+    };
+    reader.readAsDataURL(file);
+    fileInput.value = '';
+  });
+
+  // Restaurar imágenes guardadas
+  document.querySelectorAll('.cert-card[data-cert]').forEach(card => {
+    const id = card.dataset.cert;
+    try {
+      const saved = localStorage.getItem('cert-' + id);
+      if (saved) {
+        const img = document.getElementById('img-' + id);
+        const ph  = document.getElementById('ph-' + id);
+        img.src = saved; img.style.display = 'block'; ph.style.display = 'none';
+      }
+    } catch(e) {}
+  });
 </script>
 </body>
 </html>
