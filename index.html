@@ -638,34 +638,17 @@
       letter-spacing: 0.08em;
       text-align: center;
       padding: 1rem;
+      display: none;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      width: 100%;
     }
 
     .cert-thumb-placeholder span {
-      display: block;
       font-size: 2rem;
-      margin-bottom: 0.5rem;
       opacity: 0.3;
     }
-
-    .cert-upload-btn {
-      position: absolute;
-      bottom: 0.5rem;
-      right: 0.5rem;
-      font-family: var(--mono);
-      font-size: 0.6rem;
-      letter-spacing: 0.08em;
-      background: rgba(0,229,255,0.15);
-      border: 1px solid rgba(0,229,255,0.3);
-      color: var(--accent);
-      padding: 0.25rem 0.6rem;
-      cursor: pointer;
-      transition: background 0.2s;
-      border-radius: 2px;
-    }
-
-    .cert-upload-btn:hover { background: rgba(0,229,255,0.25); }
-
-    #file-input { display: none; }
 
     /* ── FADE IN ── */
     .fade-in {
@@ -707,9 +690,11 @@
   <div class="hero-inner">
     <p class="hero-tag">Disponible para nuevas oportunidades</p>
     <h1>CHRISTIAN<br/><span>ANDRÉ</span><br/>SOLÍS</h1>
-    <p class="hero-title-sub">Ing. Sistemas Computacionales</p>
+    <p class="hero-title-sub">Ing. Sistemas Computacionales · Ciberseguridad · Pentesting · Sysadmin</p>
     <p class="hero-desc">
       Ingeniero en Sistemas Computacionales con enfoque en seguridad ofensiva y defensiva.
+      Experiencia real en entornos de producción, análisis de amenazas con Microsoft Sentinel
+      y práctica continua en HackTheBox y Bug Bounty.
     </p>
     <div class="hero-cta">
       <a href="mailto:chrisandresol@outlook.com" class="btn btn-primary">Contactar</a>
@@ -822,7 +807,7 @@
     <div class="exp-item fade-in">
       <div class="exp-line"></div>
       <div class="exp-content">
-        <div class="exp-period">Mayo 2025 — Febrero 2026</div>
+        <div class="exp-period">2018 — 2023</div>
         <div class="exp-role">Técnico IT / Administrador de Sistemas</div>
         <div class="exp-org">TESE – Tecnológico de Estudios Superiores de Ecatepec</div>
         <ul class="exp-bullets">
@@ -885,107 +870,98 @@
     <div class="section-line"></div>
   </div>
 
-  <input type="file" id="file-input" accept="image/*">
-
   <div class="certs-grid">
-    <div class="cert-card fade-in" data-cert="diplomado-uach">
+
+    <div class="cert-card fade-in">
       <div class="cert-thumb-wrap">
-        <img id="img-diplomado-uach" src="" alt="" style="display:none">
-        <div class="cert-thumb-placeholder" id="ph-diplomado-uach"><span>📄</span>Subir imagen</div>
-        <button class="cert-upload-btn" onclick="triggerUpload('diplomado-uach')">+ Subir</button>
+        <img src="certs/diplomado-uach.jpg" alt="Diplomado en Seguridad Informática" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cert-thumb-placeholder"><span>📄</span>Sin imagen aún</div>
       </div>
       <div class="cert-name">Diplomado en Seguridad Informática</div>
       <div class="cert-issuer">Universidad Autónoma de Chihuahua (UACH)</div>
       <div class="cert-year">2025 · 106 horas</div>
     </div>
 
-    <div class="cert-card fade-in" data-cert="ethical-hacker">
+    <div class="cert-card fade-in">
       <div class="cert-thumb-wrap">
-        <img id="img-ethical-hacker" src="" alt="" style="display:none">
-        <div class="cert-thumb-placeholder" id="ph-ethical-hacker"><span>📄</span>Subir imagen</div>
-        <button class="cert-upload-btn" onclick="triggerUpload('ethical-hacker')">+ Subir</button>
+        <img src="certs/ethical-hacker.jpg" alt="Ethical Hacker" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cert-thumb-placeholder"><span>📄</span>Sin imagen aún</div>
       </div>
       <div class="cert-name">Ethical Hacker</div>
       <div class="cert-issuer">Cisco Networking Academy</div>
       <div class="cert-year">Cisco</div>
     </div>
 
-    <div class="cert-card fade-in" data-cert="ccna-intro">
+    <div class="cert-card fade-in">
       <div class="cert-thumb-wrap">
-        <img id="img-ccna-intro" src="" alt="" style="display:none">
-        <div class="cert-thumb-placeholder" id="ph-ccna-intro"><span>📄</span>Subir imagen</div>
-        <button class="cert-upload-btn" onclick="triggerUpload('ccna-intro')">+ Subir</button>
+        <img src="certs/ccna-intro.jpg" alt="CCNA Introduction to Networks" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cert-thumb-placeholder"><span>📄</span>Sin imagen aún</div>
       </div>
       <div class="cert-name">CCNA: Introduction to Networks</div>
       <div class="cert-issuer">Cisco Networking Academy</div>
       <div class="cert-year">Cisco</div>
     </div>
 
-    <div class="cert-card fade-in" data-cert="intro-cybersec">
+    <div class="cert-card fade-in">
       <div class="cert-thumb-wrap">
-        <img id="img-intro-cybersec" src="" alt="" style="display:none">
-        <div class="cert-thumb-placeholder" id="ph-intro-cybersec"><span>📄</span>Subir imagen</div>
-        <button class="cert-upload-btn" onclick="triggerUpload('intro-cybersec')">+ Subir</button>
+        <img src="certs/intro-cybersec.jpg" alt="Introduction to Cybersecurity" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cert-thumb-placeholder"><span>📄</span>Sin imagen aún</div>
       </div>
       <div class="cert-name">Introduction to Cybersecurity</div>
       <div class="cert-issuer">Cisco Networking Academy</div>
       <div class="cert-year">Cisco</div>
     </div>
 
-    <div class="cert-card fade-in" data-cert="hack4u">
+    <div class="cert-card fade-in">
       <div class="cert-thumb-wrap">
-        <img id="img-hack4u" src="" alt="" style="display:none">
-        <div class="cert-thumb-placeholder" id="ph-hack4u"><span>📄</span>Subir imagen</div>
-        <button class="cert-upload-btn" onclick="triggerUpload('hack4u')">+ Subir</button>
+        <img src="certs/hack4u.jpg" alt="Introducción al Hacking" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cert-thumb-placeholder"><span>📄</span>Sin imagen aún</div>
       </div>
       <div class="cert-name">Introducción al Hacking</div>
       <div class="cert-issuer">hack4u.io</div>
       <div class="cert-year">hack4u</div>
     </div>
 
-    <div class="cert-card fade-in" data-cert="codered">
+    <div class="cert-card fade-in">
       <div class="cert-thumb-wrap">
-        <img id="img-codered" src="" alt="" style="display:none">
-        <div class="cert-thumb-placeholder" id="ph-codered"><span>📄</span>Subir imagen</div>
-        <button class="cert-upload-btn" onclick="triggerUpload('codered')">+ Subir</button>
+        <img src="certs/codered.jpg" alt="Hacking CodeRed" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cert-thumb-placeholder"><span>📄</span>Sin imagen aún</div>
       </div>
       <div class="cert-name">Hacking</div>
       <div class="cert-issuer">CodeRed</div>
       <div class="cert-year">CodeRed</div>
     </div>
 
-    <div class="cert-card fade-in" data-cert="slim-seg">
+    <div class="cert-card fade-in">
       <div class="cert-thumb-wrap">
-        <img id="img-slim-seg" src="" alt="" style="display:none">
-        <div class="cert-thumb-placeholder" id="ph-slim-seg"><span>📄</span>Subir imagen</div>
-        <button class="cert-upload-btn" onclick="triggerUpload('slim-seg')">+ Subir</button>
+        <img src="certs/slim-seg.jpg" alt="Técnico en Seguridad Informática" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cert-thumb-placeholder"><span>📄</span>Sin imagen aún</div>
       </div>
       <div class="cert-name">Técnico en Seguridad Informática</div>
       <div class="cert-issuer">Fundación Carlos Slim</div>
       <div class="cert-year">Carlos Slim</div>
     </div>
 
-    <div class="cert-card fade-in" data-cert="slim-delitos">
+    <div class="cert-card fade-in">
       <div class="cert-thumb-wrap">
-        <img id="img-slim-delitos" src="" alt="" style="display:none">
-        <div class="cert-thumb-placeholder" id="ph-slim-delitos"><span>📄</span>Subir imagen</div>
-        <button class="cert-upload-btn" onclick="triggerUpload('slim-delitos')">+ Subir</button>
+        <img src="certs/slim-delitos.jpg" alt="Prevención de Delitos Cibernéticos" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cert-thumb-placeholder"><span>📄</span>Sin imagen aún</div>
       </div>
       <div class="cert-name">Prevención de Delitos Cibernéticos</div>
       <div class="cert-issuer">Fundación Carlos Slim</div>
       <div class="cert-year">Carlos Slim</div>
     </div>
 
-    <div class="cert-card fade-in" data-cert="cisco-red">
+    <div class="cert-card fade-in">
       <div class="cert-thumb-wrap">
-        <img id="img-cisco-red" src="" alt="" style="display:none">
-        <div class="cert-thumb-placeholder" id="ph-cisco-red"><span>📄</span>Subir imagen</div>
-        <button class="cert-upload-btn" onclick="triggerUpload('cisco-red')">+ Subir</button>
+        <img src="certs/cisco-red.jpg" alt="Direccionamiento de Red" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="cert-thumb-placeholder"><span>📄</span>Sin imagen aún</div>
       </div>
       <div class="cert-name">Direccionamiento de Red y Solución de Problemas</div>
       <div class="cert-issuer">Cisco Networking Academy</div>
       <div class="cert-year">Cisco</div>
     </div>
+
   </div>
 </section>
 
@@ -1019,7 +995,7 @@
     <span class="section-num">05</span>
     <h2>CONTACTO</h2>
   </div>
-  <p class="contact-sub fade-in">Abierto a roles en ciberseguridad, pentesting y administración de sistemas</p>
+  <p class="contact-sub fade-in">Abierto a roles en ciberseguridad, pentesting, soporte y administración de sistemas</p>
   <a href="mailto:chrisandresol@outlook.com" class="btn btn-primary fade-in">chrisandresol@outlook.com</a>
   <div class="contact-links fade-in">
     <a href="https://github.com/shemsur" target="_blank" class="contact-link">⬡ GitHub / shemsur</a>
@@ -1035,52 +1011,11 @@
 </footer>
 
 <script>
-  // Fade in on scroll
   const observer = new IntersectionObserver(
     (entries) => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
     { threshold: 0.1 }
   );
   document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-  // Cert image upload
-  let currentCert = null;
-  const fileInput = document.getElementById('file-input');
-
-  function triggerUpload(certId) {
-    currentCert = certId;
-    fileInput.click();
-  }
-
-  fileInput.addEventListener('change', (e) => {
-    const file = e.target.files[0];
-    if (!file || !currentCert) return;
-
-    const reader = new FileReader();
-    reader.onload = (ev) => {
-      const img = document.getElementById('img-' + currentCert);
-      const ph  = document.getElementById('ph-' + currentCert);
-      img.src = ev.target.result;
-      img.style.display = 'block';
-      ph.style.display  = 'none';
-      // Guardar en localStorage para persistencia
-      try { localStorage.setItem('cert-' + currentCert, ev.target.result); } catch(e) {}
-    };
-    reader.readAsDataURL(file);
-    fileInput.value = '';
-  });
-
-  // Restaurar imágenes guardadas
-  document.querySelectorAll('.cert-card[data-cert]').forEach(card => {
-    const id = card.dataset.cert;
-    try {
-      const saved = localStorage.getItem('cert-' + id);
-      if (saved) {
-        const img = document.getElementById('img-' + id);
-        const ph  = document.getElementById('ph-' + id);
-        img.src = saved; img.style.display = 'block'; ph.style.display = 'none';
-      }
-    } catch(e) {}
-  });
 </script>
 </body>
 </html>
