@@ -602,53 +602,30 @@
       margin-top: 0.8rem;
     }
 
-    /* ── CERT CARDS CON THUMBNAIL ── */
-    .cert-card {
-      cursor: default;
-    }
-
-    .cert-thumb-wrap {
-      width: 100%;
-      aspect-ratio: 4/3;
-      overflow: hidden;
-      border-radius: 2px;
-      margin-bottom: 0.9rem;
-      background: var(--surface);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 1px solid var(--border);
-      position: relative;
-    }
-
-    .cert-thumb-wrap img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.3s ease;
-    }
-
-    .cert-card:hover .cert-thumb-wrap img {
-      transform: scale(1.04);
-    }
-
-    .cert-thumb-placeholder {
+    /* ── CERT BTN ── */
+    .cert-btn {
       font-family: var(--mono);
-      font-size: 0.65rem;
-      color: var(--muted);
+      font-size: 0.7rem;
       letter-spacing: 0.08em;
-      text-align: center;
-      padding: 1rem;
-      display: none;
-      flex-direction: column;
-      align-items: center;
-      gap: 0.5rem;
-      width: 100%;
+      color: var(--accent);
+      text-decoration: none;
+      border: 1px solid rgba(0,229,255,0.25);
+      padding: 0.4rem 0.9rem;
+      margin-top: 0.6rem;
+      display: inline-block;
+      transition: all 0.2s;
+      border-radius: 2px;
     }
 
-    .cert-thumb-placeholder span {
-      font-size: 2rem;
-      opacity: 0.3;
+    .cert-btn:hover {
+      background: rgba(0,229,255,0.1);
+      border-color: var(--accent);
+    }
+
+    .cert-btn:not([href*=".pdf"]) {
+      color: var(--muted);
+      border-color: var(--border);
+      pointer-events: none;
     }
 
     /* ── FADE IN ── */
@@ -694,8 +671,8 @@
     <p class="hero-title-sub">Ing. Sistemas Computacionales · Ciberseguridad · Pentesting · Sysadmin</p>
     <p class="hero-desc">
       Ingeniero en Sistemas Computacionales con enfoque en seguridad ofensiva y defensiva.
-      Experiencia real en entornos de producción, administracion de servidores web y bases de datos
-      y práctica continua en maquinas virtuales vulnerables en entornos como HackTheBox.
+      Experiencia real en entornos de producción, análisis de amenazas con Microsoft Sentinel
+      y práctica en maquinas virtuales en HackTheBox.
     </p>
     <div class="hero-cta">
       <a href="mailto:chrisandresol@outlook.com" class="btn btn-primary">Contactar</a>
@@ -874,93 +851,66 @@
   <div class="certs-grid">
 
     <div class="cert-card fade-in">
-      <div class="cert-thumb-wrap">
-        <img src="cert/diplomado-uach.jpg" alt="Diplomado en Seguridad Informática" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="cert-thumb-placeholder"><span>📄</span>Sin imagen aún</div>
-      </div>
       <div class="cert-name">Diplomado en Seguridad Informática</div>
       <div class="cert-issuer">Universidad Autónoma de Chihuahua (UACH)</div>
       <div class="cert-year">2025 · 106 horas</div>
+      <a href="cert/diplomado-uach.pdf" target="_blank" class="cert-btn">Ver certificado ↗</a>
     </div>
 
     <div class="cert-card fade-in">
-      <div class="cert-thumb-wrap">
-        <img src="cert/Ethical_Hacker.jpg" alt="Ethical Hacker" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="cert-thumb-placeholder"><span>📄</span>Sin imagen aún</div>
-      </div>
       <div class="cert-name">Ethical Hacker</div>
       <div class="cert-issuer">Cisco Networking Academy</div>
       <div class="cert-year">Cisco</div>
+      <a href="cert/Ethical_Hacker.pdf" target="_blank" class="cert-btn">Ver certificado ↗</a>
     </div>
 
     <div class="cert-card fade-in">
-      <div class="cert-thumb-wrap">
-        <img src="cert/CCNA-V7-CISCO.jpg" alt="CCNA Introduction to Networks" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="cert-thumb-placeholder"><span>📄</span>Sin imagen aún</div>
-      </div>
       <div class="cert-name">CCNA: Introduction to Networks</div>
       <div class="cert-issuer">Cisco Networking Academy</div>
       <div class="cert-year">Cisco</div>
+      <a href="cert/CCNA-V7-CISCO.pdf" target="_blank" class="cert-btn">Ver certificado ↗</a>
     </div>
 
     <div class="cert-card fade-in">
-      <div class="cert-thumb-wrap">
-        <img src="cert/Introduction_to_Cybersecurity.jpg" alt="Introduction to Cybersecurity" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="cert-thumb-placeholder"><span>📄</span>Sin imagen aún</div>
-      </div>
       <div class="cert-name">Introduction to Cybersecurity</div>
       <div class="cert-issuer">Cisco Networking Academy</div>
       <div class="cert-year">Cisco</div>
+      <a href="cert/Introduction_to_Cybersecurity.pdf" target="_blank" class="cert-btn">Ver certificado ↗</a>
     </div>
 
     <div class="cert-card fade-in">
-      <div class="cert-thumb-wrap">
-        <img src="cert/Hack4u.jpg" alt="Introducción al Hacking" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="cert-thumb-placeholder"><span>📄</span>Sin imagen aún</div>
-      </div>
       <div class="cert-name">Introducción al Hacking</div>
       <div class="cert-issuer">hack4u.io</div>
       <div class="cert-year">hack4u</div>
+      <a href="cert/Hack4u.pdf" target="_blank" class="cert-btn">Ver certificado ↗</a>
     </div>
 
     <div class="cert-card fade-in">
-      <div class="cert-thumb-wrap">
-        <img src="cert/codered.jpg" alt="Hacking CodeRed" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="cert-thumb-placeholder"><span>📄</span>Sin imagen aún</div>
-      </div>
       <div class="cert-name">Hacking</div>
       <div class="cert-issuer">CodeRed</div>
       <div class="cert-year">CodeRed</div>
+      <a href="cert/codered.pdf" target="_blank" class="cert-btn">Sin certificado aún</a>
     </div>
 
     <div class="cert-card fade-in">
-      <div class="cert-thumb-wrap">
-        <img src="cert/TecnicoSeguridad.jpg" alt="Técnico en Seguridad Informática" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="cert-thumb-placeholder"><span>📄</span>Sin imagen aún</div>
-      </div>
       <div class="cert-name">Técnico en Seguridad Informática</div>
       <div class="cert-issuer">Fundación Carlos Slim</div>
       <div class="cert-year">Carlos Slim</div>
+      <a href="cert/TecnicoSeguridad.pdf" target="_blank" class="cert-btn">Ver certificado ↗</a>
     </div>
 
     <div class="cert-card fade-in">
-      <div class="cert-thumb-wrap">
-        <img src="cert/slim-delitos.jpg" alt="Prevención de Delitos Cibernéticos" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="cert-thumb-placeholder"><span>📄</span>Sin imagen aún</div>
-      </div>
       <div class="cert-name">Prevención de Delitos Cibernéticos</div>
       <div class="cert-issuer">Fundación Carlos Slim</div>
       <div class="cert-year">Carlos Slim</div>
+      <a href="cert/slim-delitos.pdf" target="_blank" class="cert-btn">Sin certificado aún</a>
     </div>
 
     <div class="cert-card fade-in">
-      <div class="cert-thumb-wrap">
-        <img src="cert/cisco-red.jpg" alt="Direccionamiento de Red" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <div class="cert-thumb-placeholder"><span>📄</span>Sin imagen aún</div>
-      </div>
       <div class="cert-name">Direccionamiento de Red y Solución de Problemas</div>
       <div class="cert-issuer">Cisco Networking Academy</div>
       <div class="cert-year">Cisco</div>
+      <a href="cert/cisco-red.pdf" target="_blank" class="cert-btn">Sin certificado aún</a>
     </div>
 
   </div>
